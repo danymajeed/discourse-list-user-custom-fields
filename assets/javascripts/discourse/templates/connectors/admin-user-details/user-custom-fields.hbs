@@ -1,0 +1,17 @@
+{{#if model.custom_fields}}
+  <section class="details">
+    <h1>Custom Fields</h1>
+    {{#each-in model.custom_fields as |name value|}}
+      <div class="display-row">
+        <div class="field">{{name}}</div>
+        <div class="value">
+          {{#if value}}
+            {{value}}
+          {{else}}
+            &mdash;
+          {{/if}}
+        </div>
+      </div>
+    {{/each-in}}
+  </section>
+{{/if}}

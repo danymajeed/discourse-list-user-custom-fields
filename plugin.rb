@@ -16,6 +16,11 @@ after_initialize do
 
     #############################
 
+    add_to_serializer :admin_detailed_user, :custom_fields do
+      fields = object.custom_fields.select { |k, v| !k.start_with?("user_field_") }
+      fields if !fields.empty?
+    end
+
     #############################
 
   end
